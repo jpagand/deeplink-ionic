@@ -24,17 +24,13 @@ angular.module('starter', ['ionic', 'ionic.native', 'starter.controllers', 'star
 .run(['$ionicPlatform', '$cordovaDeeplinks', '$state', '$timeout', function($ionicPlatform, $cordovaDeeplinks, $state, $timeout) {
   $ionicPlatform.ready(function() {
     $cordovaDeeplinks.route({
-      '/product/:productId': {
-        target: 'product',
-        parent: 'products'
+      '/gookersbk/dish/:dishId': {
+        target: 'dish'
       }
     }).subscribe(function(match) {
-      $timeout(function() {
-        $state.go(match.$route.parent, match.$args);
         $timeout(function() {
           $state.go(match.$route.target, match.$args);
         }, 800);
-      }, 100);
     }, function(nomatch) {
       console.warn('No match', nomatch);
     });
@@ -54,13 +50,8 @@ angular.module('starter', ['ionic', 'ionic.native', 'starter.controllers', 'star
     templateUrl: 'templates/product.html',
     controller: 'ProductCtrl'
   })
-  .state('products', {
-    url: '/product',
-    templateUrl: 'templates/products.html',
-    controller: 'ProductsCtrl'
-  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/product');
+  $urlRouterProvider.otherwise('/product/1');
 
 });
