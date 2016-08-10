@@ -1,7 +1,33 @@
-<ion-view view-title="{{dishId}}">
-  <ion-content class="padding">
-    <p>
-      This is a product.
-    </p>
+<ion-view hide-nav-bar="true">
+  <ion-content>
+    <div class="dish dish-detail" ng-if="dish">
+      <div class="dish-header" style="background-image: url({{dish.photo.url}});">
+        <div class="overlay-gradient"></div>
+        <div class="dish-ribbon" ng-class="{'dish-ready': dish.readyIn <= 5, 'dish-wait': dish.readyIn > 5 && dish.readyIn < 30}">Prêt {{dish.readyIn > 0 ? 'dans ' +dish.readyIn + ' min' : 'maintenant'}}</div>
+        <div class="dish-stars">
+          <i class="icon" ng-repeat="i in [0,1,2,3,4]" ng-class="{'ion-android-star' : i < dish.averageNote, 'ion-android-star-outline': i>= dish.averageNote}"></i>
+        </div>
+      </div>
+      <div class="dish-content padding">
+        <h2 class="dish-name">{{dish.name}}</h2>
+        <div class="dish-price">{{dish.currency}} {{dish.price}}</div>
+        <div class="seller item item-icon-left">
+          <i class="icon ion-android-restaurant"></i>
+          <h2>{{dish.sellerInfo.shopName}}</h2>
+          <p>
+            {{dish.sellerInfo.pickupAddress.extension}}<br>
+            {{dish.sellerInfo.pickupAddress.city}}
+          </p>
+        </div>
+        <p class="dish-description">{{dish.description}}</p>
+        <button class="button button-full button-gookers">
+          <i class="icon ion-android-cart"></i> Commander
+        </button>
+      </div>
+    </div>
+    <div ng-if="!dish">
+       <p class="text-center">Plat introuvable</p>
+    </div>
+
   </ion-content>
 </ion-view>

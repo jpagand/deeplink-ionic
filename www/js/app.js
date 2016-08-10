@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'ionic.native', 'starter.controllers', 'star
   $stateProvider
 
   .state('product', {
-    url: '/product/:productId',
+    url: '/product/:dishId',
     templateUrl: 'templates/product.html',
     controller: 'ProductCtrl'
   })

@@ -1,1 +1,76 @@
-/* Empty. Add your own CSS if you like */
+.overlay-gradient {
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 65%,rgba(0,0,0,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 65%,rgba(0,0,0,0.95) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dish-header, .dish-content {
+  position: relative;
+}
+
+.dish-content {
+  padding: 10px 20px;
+}
+
+.dish-header .dish-stars {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px 20px 15px 15px;
+  color: #f0f0f0;
+  font-size: 22px;
+  text-align: right;
+}
+.dish-header {
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+}
+.dish-header .dish-stars .icon {
+  margin-left: 8px;
+}
+.dish-content .dish-price {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px 20px 15px 15px;
+  font-size: 22px;
+  line-height: 1.2;
+  width: 130px;
+  text-align: right;
+}
+
+.dish-ribbon {
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 50px;
+  left: -40px;
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.dish-ready {
+  background: #27ae60;
+}
+.dish-ready-wait {
+  background: #f1c40f;
+}
+
+.seller {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.button-gookers {
+  color: #f0f0f0;
+  background: -webkit-linear-gradient(30deg, #ff8200 0%, #f4af45 100%);
+  background: linear-gradient(30deg, #ff8200 0%, #f4af45 100%);
+  border-radius: 4px;
+}
