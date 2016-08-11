@@ -24,7 +24,7 @@ angular.module('starter', ['ionic', 'ionic.native', 'starter.controllers', 'star
 .run(['$ionicPlatform', '$cordovaDeeplinks', '$state', '$timeout', function($ionicPlatform, $cordovaDeeplinks, $state, $timeout) {
   $ionicPlatform.ready(function() {
     $cordovaDeeplinks.route({
-      '/gookersbk/dishes/:dishId': {
+      '/gk_dev_v1/public/share/dishes/:dishId': {
         target: 'product'
       }
     }).subscribe(function(match) {
